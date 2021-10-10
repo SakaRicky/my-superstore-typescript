@@ -29,7 +29,7 @@ export type Action =
        }
        |{
         type: "REMOVE_ITEM_FROM_CART",
-        payload: number
+        payload: string
        };
 
 export const initiateState = (): Action => {
@@ -55,13 +55,13 @@ export const decreaseItemInCart = (item: CartItemType): Action => {
     return { type: "DECREASE_ITEM_IN_CART", payload: item };
 };
 
-export const removeItemFromCart = (id: number): Action => {
+export const removeItemFromCart = (id: string): Action => {
     return { type: "REMOVE_ITEM_FROM_CART", payload: id };
 };
 
 export const reducer = (state: State, action: Action): State => {
     switch (action.type) {
-        case setStateType.INIT_STATE:
+        case "INIT_STATE":
             return {
                 cart: [],
                 user: null
@@ -174,8 +174,9 @@ export const reducer = (state: State, action: Action): State => {
 
         case "REMOVE_ITEM_FROM_CART": {
             const IDToRemove = action.payload;
-            const newCartItems = state.cart.filter(item => Number(item.id) !== IDToRemove);
-
+            const newCartItems = state.cart.filter(item => item.id !== IDToRemove);
+            console.log(newCartItems);
+            
             return {
                 ...state,
                 cart: newCartItems

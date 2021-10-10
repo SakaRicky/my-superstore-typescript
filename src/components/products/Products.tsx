@@ -5,9 +5,10 @@ import './products.css';
 import { ItemType } from '../../../types';
 
 interface ProductsProp {
-    items: ItemType[]
+    items: ItemType[],
+    toCart: (item: ItemType) => void
 }
-const Products = ({items}: ProductsProp) => {
+const Products = ({items, toCart}: ProductsProp) => {
 
     return (
         <div className="container mt-5">
@@ -23,6 +24,8 @@ const Products = ({items}: ProductsProp) => {
                                     average_rating={item.avgRating}
                                     isOnSale={item.isOnSale}
                                     item_id={item.id}
+                                    stockCount={item.stockCount}
+                                    toCart={toCart}
                                 />
                         </div>
                     );

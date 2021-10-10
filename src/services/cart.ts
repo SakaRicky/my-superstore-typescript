@@ -9,7 +9,7 @@ const setToken = (t: string) => {
     token = t;
 };
 
-const getCart = async () => {
+const getCart = async (token: string) => {
     const config = {
         headers: { authorization: `bearer ${token}`}
     };

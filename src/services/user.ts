@@ -1,24 +1,20 @@
 import axios from 'axios';
+import { User, SignupUser } from '../../types';
 
 const baseUrl = '/';
 
 export interface LoginProp {
-    username: string,
-    password: string
-}
-
-export interface SignUpProp {
     email: string,
-    username: string,
-    password: string,
+    password: string
+    username?: string
 }
 
-const login = async (credentials: LoginProp) => {
-    const response = await axios.post(`${baseUrl}login`, credentials);
+const login = async (credentials: any) => {
+    const response = await axios.post<User>(`${baseUrl}login`, credentials);
     return response.data;
 };
 
-const signup = async (newUser: SignUpProp) => {
+const signup = async (newUser: any) => {
     const response = await axios.post(`${baseUrl}login`, newUser);
     return response.data;
 };

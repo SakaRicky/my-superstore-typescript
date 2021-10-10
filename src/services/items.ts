@@ -4,10 +4,10 @@ import constants from '../utils/constants';
 
 const baseUrl = 'http://localhost:5000/';
 
-// export const upload = async (formdata) => {
-//     const response = await axios.post(`${baseUrl}item/upload`, formdata)
-//     return response.data
-// }
+export const upload = async (formdata: any) => {
+    const response = await axios.post(`${baseUrl}item/upload`, formdata);
+    return response.data;
+};
 
 const getItem = async (id: string) => {    
     const response = await axios.get<ItemType>(`${baseUrl}item/${id}`);

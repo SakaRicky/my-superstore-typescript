@@ -62,9 +62,11 @@ const Cart = () => {
 
     };
 
-    const remove =(id: number) => {
+    const remove =(id: string) => {
         //Dispatch here
         // cartDispatch({type: cartTypes.REMOVEFROMCART, data: id});
+        console.log("Remove item from cart");
+        
         dispatch(removeItemFromCart(id));
 
     };

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Products from '../../products/Products';
 import SearchBar from '../../searchbar/Searchbar';
 import services from '../../../services/items';
-
+import { addToCart, useStateValue } from '../../../state';
 import './home.css';
 import Pagination from '../../pagination/Pagination';
 import constants from '../../../utils/constants';
+import { ItemType } from '../../../../types';
 
 // avgRating: 4
 // description: "Men shoe white color"
@@ -17,6 +18,7 @@ import constants from '../../../utils/constants';
 // stockCount: 300
 
 const Home = () => {
+    const [state, dispatch] = useStateValue();
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [totalItems, setTotalItems] = useState<number>();
@@ -61,10 +63,14 @@ const Home = () => {
         setPage(page);
     };
 
+    const addItemToCart = (item: ItemType) => {
+        dispatch(addToCart(item, 1));
+    };
+
     return (
         <div className="container-fluid">
             <SearchBar handleSearch={handleSearch}/>
-            {items.length === 0 && !isLoading ? <h3 className="no-item">No items matched your search</h3> : <Products items={items}/>};
+            {items.length === 0 && !isLoading ? <h3 className="no-item">No items matched your search</h3> : <Products items={items} toCart={addItemToCart} />};
             <Pagination updatePage={updatePage} page={page} totalItems={totalItems} />
         </div>
         

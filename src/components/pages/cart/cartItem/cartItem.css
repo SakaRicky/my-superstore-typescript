@@ -20,7 +20,15 @@
     font-weight: bold;
 }
 
+.icon {
+    width: 25px;
+    height: 25px;
+    color: rgb(247, 168, 21);
+}
 
+.icon:hover {
+    cursor: pointer;
+}
 
  /* Medium devices (tablets, 768px and up) */
 /* @media (min-width: 768px) { 

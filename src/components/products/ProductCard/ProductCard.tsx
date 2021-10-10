@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ItemType } from '../../../../types';
 
 import ProductStars from '../../stars/ProductStars';
 
@@ -13,9 +14,25 @@ interface ProductProp {
     average_rating: number,
     isOnSale: boolean,
     item_id: string,
+    stockCount: number
+    toCart: (item: ItemType) => void
 }
 
-const ProductCard = ({imgUrl, price, name, average_rating, isOnSale, item_id}: ProductProp) => {
+const ProductCard = ({imgUrl, price, name, average_rating, isOnSale, item_id, description, stockCount, toCart}: ProductProp) => {
+
+    const sendToAddToCart = () => {
+        const item: ItemType = {
+            imageUrl: imgUrl,
+            description: description,
+            price: price,
+            name: name,
+            avgRating: average_rating,
+            isOnSale: isOnSale,
+            id: item_id,
+            stockCount: stockCount
+        };
+        toCart(item);
+    };
 
     return (
         <div className="card">
@@ -34,7 +51,7 @@ const ProductCard = ({imgUrl, price, name, average_rating, isOnSale, item_id}: P
             </div>
             <div className='my-3 d-flex justify-content-between'>
                 <Link to={`item/${item_id}`} className="btn btn-primary center">View Item</Link>
-                <Link to={`item/${item_id}`} className="btn center add_cart">Add to Chart</Link>
+                <button className="btn center add_cart" onClick={sendToAddToCart}>Add to Chart</button>
             </div>
         </div>
     );
