@@ -1,0 +1,28 @@
+.navbar-brand {
+    font-size: 30px !important;
+}
+
+.active{
+    color: black !important;
+    background-color:white;
+  }
+
+.sign_in {
+    background-color: orange;
+}
+
+.head_bar {
+    background-color: rgb(21, 10, 82); 
+}
+
+.logout:hover {
+    color: red;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .head_bar {
+        background-color: rgb(21, 10, 82); 
+        height: 90px;
+    }
+  }

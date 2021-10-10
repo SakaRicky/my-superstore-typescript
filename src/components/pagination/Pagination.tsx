@@ -7,7 +7,7 @@ const PAGE_SIZE = constants.PAGE_SIZE;
 interface PaginationProp {
     updatePage: (page: number) => void,
     page: number,
-    totalItems: number | undefined
+    totalItems: number | undefined | null
 }
 
 const Pagination = ({updatePage, page, totalItems}: PaginationProp) => {

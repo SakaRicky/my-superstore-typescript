@@ -32,8 +32,9 @@ const ProductCard = ({imgUrl, price, name, average_rating, isOnSale, item_id}: P
                     </p>
                 </div>
             </div>
-            <div className='row my-3 mx-auto'>
+            <div className='my-3 d-flex justify-content-between'>
                 <Link to={`item/${item_id}`} className="btn btn-primary center">View Item</Link>
+                <Link to={`item/${item_id}`} className="btn center add_cart">Add to Chart</Link>
             </div>
         </div>
     );

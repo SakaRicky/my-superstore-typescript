@@ -27,3 +27,16 @@
 .card-body a:hover {
     color: rgb(0, 0, 255);
 }
+
+.add_cart {
+    color: black;
+    background-color: rgb(247, 168, 21);
+    border: rgb(247, 168, 21);
+    border-radius: 2px;
+    /* padding: 1px 15px; */
+    /* font-weight: bold; */
+}
+
+.add_cart:hover {
+    color: white;
+}

@@ -1,0 +1,17 @@
+.cart-list {
+    list-style: none;
+}
+
+.checkout-btn {
+    color: white;
+    background-color: orange;
+    border: none;
+    border-radius: 2px;
+}
+
+.saveCart-btn {
+    color: white;
+    background-color: rgb(21, 10, 82);;
+    border: none;
+    border-radius: 2px;
+}

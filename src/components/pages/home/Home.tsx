@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Products from '../../products/Products';
 import SearchBar from '../../searchbar/Searchbar';
-import fetchItemList from '../../../services/items';
+import services from '../../../services/items';
 
-// import './home.css';
+import './home.css';
 import Pagination from '../../pagination/Pagination';
 import constants from '../../../utils/constants';
 
@@ -36,7 +36,7 @@ const Home = () => {
             };
             // Get the items of the backend for the current page
             // const data_items = await fetchItemList(params)
-            const data_items = await fetchItemList(params);
+            const data_items = await services.fetchItemList(params);
             // Set number of pages in pagination
             setTotalItems(data_items.total);
             setItems(data_items.items);

@@ -1,0 +1,26 @@
+.icon-block {
+    position: relative;
+}
+
+.icon-tag {
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin {
+    color: white;
+    background-color: rgb(247, 168, 21);
+    border: rgb(247, 168, 21);
+    border-radius: 2px;
+    /* padding: 1px 15px; */
+    /* font-weight: bold; */
+}

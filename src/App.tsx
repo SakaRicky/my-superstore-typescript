@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import Navbar from './components/navbar/Navbar';
+import Navbar from './components/navbar/Navbar';
 import './App.css';
 import Home from './components/pages/home/Home';
-// import Deals from './components/pages/deals/Deals';
-// import Cart from './components/pages/cart/Cart';
-// import Item from './components/pages/item_page/Item';
+import Deals from './components/pages/deals/Deals';
+import Cart from './components/pages/cart/Cart';
+import Item from './components/pages/item_page/Item';
 // import Admin from './components/pages/admin/Admin' ;
 // import Thankyou from './components/pages/thankyou/Thankyou';
 // import Login from './components/pages/login/Login';
@@ -34,19 +34,19 @@ const App = () => {
   return (
         <div>
           <Router>
-            {/* <Navbar /> */}
+            <Navbar />
             <Switch>
               <Route exact path='/'>
                 <Home />
               </Route>
               <Route path='/deals'>
-                {/* <Deals /> */}
+                <Deals />
               </Route>
               <Route path='/cart'>
-                {/* <Cart /> */}
+                <Cart />
               </Route>
               <Route path='/item/:id'>
-                {/* <Item /> */}
+                <Item />
               </Route>
 
               {/* <ProtectedRoute path='/admin' user={userState} component={Admin} /> */}

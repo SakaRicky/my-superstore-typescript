@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ItemType } from '../../types';
 import constants from '../utils/constants';
 
 const baseUrl = 'http://localhost:5000/';
@@ -8,10 +9,10 @@ const baseUrl = 'http://localhost:5000/';
 //     return response.data
 // }
 
-// export const getItem = async (id) => {
-//     const response = await axios.get(`${baseUrl}item/${id}`)
-//     return response.data
-// }
+const getItem = async (id: string) => {    
+    const response = await axios.get<ItemType>(`${baseUrl}item/${id}`);
+    return response.data;
+};
 
 export interface FetchItemType {
     from: number,
@@ -34,13 +35,14 @@ const fetchItemList = async ({ from, sortField, sortDir, isOnSale, q }: FetchIte
                                         q,
                                     },
                                 });
-    console.log(itemLists.data);
     
     return itemLists.data;
        
 };
 
 
-// const services = { getAllItems, getDeals, getItem, upload }
 
-export default fetchItemList;
+
+const itemServices = { fetchItemList, getItem };
+
+export default itemServices;
