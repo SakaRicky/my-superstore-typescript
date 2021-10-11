@@ -31,6 +31,7 @@ const Login = () => {
             const user = await userService.login({email, password});
             cartServices.setToken(user.token);
             const cart = await cartServices.getCart(user.token);
+            
             user.cart = cart;
             if (rememberMe) {
                 window.localStorage.setItem('loggedUser', JSON.stringify(user));   
@@ -43,9 +44,8 @@ const Login = () => {
             history.push('/');
             
         } catch (error) {
-            console.log(error);
             notify({
-                message: "Invalid username or password",
+                message: "Invalid username or password or Token",
                 class: "alert alert-danger"
             });
         }

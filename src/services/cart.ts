@@ -13,7 +13,6 @@ const getCart = async (token: string) => {
     const config = {
         headers: { authorization: `bearer ${token}`}
     };
-    console.log('config', config);
     const response = await axios.get(`${baseUrl}cart`, config);
     return response.data;
 };

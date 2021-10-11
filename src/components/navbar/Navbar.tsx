@@ -21,9 +21,7 @@ const MyNavbar = () => {
 
     const navItemsClassName = navbarActive ? "nav_items active" : "nav_items";
 
-    const showSideDrawer = () => {
-        console.log("click toggle button");
-        console.log(navbarActive);
+    const toggleSideDrawer = () => {
         setNavbarActive(!navbarActive);
     };
 
@@ -33,7 +31,16 @@ const MyNavbar = () => {
             <div>{userState.name}</div>
             <div className="logout" onClick={handleLogout}>logout</div>
           </div>;
+    
+    const burgerIcon = navbarActive ? 
+                                    <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                    :
 
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>;
     return (
             <nav className="navBar">
                 <div className="logo">
@@ -47,59 +54,12 @@ const MyNavbar = () => {
                     {userState && userState.role === 'admin' ? <NavItem navName="Admin" linkTo='/admin' /> : null}
                     {signInButton}
                 </ul>
-                <div className="burger" onClick={showSideDrawer}>
-                    <div className="line1"></div>
-                    <div className="line2"></div>
-                    <div className="line3"></div>
+
+                <div className="burger" onClick={toggleSideDrawer}>
+                    {burgerIcon}
                 </div>
-            </nav>
-        // <nav className="navbar navbar-expand-md navbar-light py-2 head_bar">
-        //         <button className="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        //             <FaBars className="navbar-toggler-icon" style={{color:"white"}} />
-        //         </button>
-        //         <Link to='/' className="navbar-brand display-1 text-white font-weight-bolder">Super Store</Link>
-
-        //     <div className="d-flex justify-content-end collapse navbar-collapse" id="navbarToggler">
-        //         <ul className="navbar-nav ml-auto">
-        //             <NavItem navName="Home" linkTo='/' />
-        //             <NavItem navName="Deals" linkTo='/deals' />
-        //             <NavItem navName="Cart" linkTo='/cart' />
-        //             {userState && userState.role === 'admin' ? <NavItem navName="Admin" linkTo='/admin' /> : null}
-        //             {signInButton}
-        //         </ul>
-        //     </div>
-        // </nav>
-        // <Navbar className="head_bar" expand="lg">
-        //     <Navbar.Brand>
-        //         <Link to='/' className="navbar-brand display-1 text-white font-weight-bolder">Super Store</Link>
-        //     </Navbar.Brand>
-
-        //     <Navbar.Toggle color="white" className="text-white"/>
-        //     <Navbar.Collapse>
-        //         <Nav>
-        //             <Nav.Link><NavItem navName="Home" linkTo='/' /></Nav.Link>
-        //             <Nav.Link><NavItem navName="Deals" linkTo='/deals' /></Nav.Link>
-        //             <Nav.Link><NavItem navName="Cart" linkTo='/cart' /></Nav.Link>
-        //             <Nav.Link><NavItem navName="Cart" linkTo='/cart' />{userState && userState.role === 'admin' ? <NavItem navName="Admin" linkTo='/admin' /> : null}</Nav.Link>
-        //             <Nav.Link>{signInButton}</Nav.Link>
-        //         </Nav>
-        //     </Navbar.Collapse>
-
-            
-        // </Navbar>
-        // <Navbar collapseOnSelect className="head_bar" expand="lg" variant="dark">
-        //         <Navbar.Brand href="/">SuperStore</Navbar.Brand>
-        //         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        //         <Navbar.Collapse className="d-flex justify-content-end align-items-center" id="responsive-navbar-nav">
                 
-        //             <Nav className="ml-auto">
-        //                 <NavItem navName="Home" linkTo='/' />
-        //                 <NavItem navName="Deals" linkTo='/deals' />
-        //                 <NavItem navName="Cart" linkTo='/cart' />{userState && userState.role === 'admin' ? <NavItem navName="Admin" linkTo='/admin' /> : null}
-        //                 <Nav.Link>{signInButton}</Nav.Link>
-        //             </Nav>
-        //         </Navbar.Collapse>
-        // </Navbar>
+            </nav>
         );
 };
 

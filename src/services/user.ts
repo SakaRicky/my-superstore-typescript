@@ -11,11 +11,13 @@ export interface LoginProp {
 
 const login = async (credentials: any) => {
     const response = await axios.post<User>(`${baseUrl}login`, credentials);
+    console.log(response);
+    
     return response.data;
 };
 
 const signup = async (newUser: any) => {
-    const response = await axios.post(`${baseUrl}login`, newUser);
+    const response = await axios.post(`${baseUrl}signup`, newUser);
     return response.data;
 };
 
