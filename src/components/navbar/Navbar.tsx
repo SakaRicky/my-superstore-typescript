@@ -5,7 +5,10 @@ import NavItem from './navItem/NavItem';
 import './navbar.css';
 import { useStateValue, initiateState } from "../../state";
 
-const Navbar = () => {
+// import { Navbar, Nav, Container, Col, Row } from "react-bootstrap";
+// import { Container } from "react-bootstrap/lib/Tab";
+
+const MyNavbar = () => {
     const [state, dispatch] = useStateValue();
 
     const userState = state.user;
@@ -42,7 +45,38 @@ const Navbar = () => {
                 </ul>
             </div>
         </nav>
+        // <Navbar className="head_bar" expand="lg">
+        //     <Navbar.Brand>
+        //         <Link to='/' className="navbar-brand display-1 text-white font-weight-bolder">Super Store</Link>
+        //     </Navbar.Brand>
+
+        //     <Navbar.Toggle color="white" className="text-white"/>
+        //     <Navbar.Collapse>
+        //         <Nav>
+        //             <Nav.Link><NavItem navName="Home" linkTo='/' /></Nav.Link>
+        //             <Nav.Link><NavItem navName="Deals" linkTo='/deals' /></Nav.Link>
+        //             <Nav.Link><NavItem navName="Cart" linkTo='/cart' /></Nav.Link>
+        //             <Nav.Link><NavItem navName="Cart" linkTo='/cart' />{userState && userState.role === 'admin' ? <NavItem navName="Admin" linkTo='/admin' /> : null}</Nav.Link>
+        //             <Nav.Link>{signInButton}</Nav.Link>
+        //         </Nav>
+        //     </Navbar.Collapse>
+
+            
+        // </Navbar>
+        // <Navbar collapseOnSelect className="head_bar" expand="lg" variant="dark">
+        //         <Navbar.Brand href="/">SuperStore</Navbar.Brand>
+        //         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        //         <Navbar.Collapse className="d-flex justify-content-end align-items-center" id="responsive-navbar-nav">
+                
+        //             <Nav className="ml-auto">
+        //                 <NavItem navName="Home" linkTo='/' />
+        //                 <NavItem navName="Deals" linkTo='/deals' />
+        //                 <NavItem navName="Cart" linkTo='/cart' />{userState && userState.role === 'admin' ? <NavItem navName="Admin" linkTo='/admin' /> : null}
+        //                 <Nav.Link>{signInButton}</Nav.Link>
+        //             </Nav>
+        //         </Navbar.Collapse>
+        // </Navbar>
         );
 };
 
-export default Navbar;
+export default MyNavbar;

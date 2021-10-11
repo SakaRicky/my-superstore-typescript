@@ -13,6 +13,7 @@
 
 .head_bar {
     background-color: rgb(21, 10, 82); 
+    /* height: 90px; */
 }
 
 .logout:hover {
@@ -20,9 +21,9 @@
     cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .head_bar {
         background-color: rgb(21, 10, 82); 
         height: 90px;
     }
-  }
+  } */

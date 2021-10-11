@@ -23,12 +23,12 @@ const NavItem = ({navName, linkTo, sign_in}: NavItemProp) => {
 
         const pillNotification = cartItems && cartItems.length !== 0 ? <div className="icon-tag">{cartItems.length}</div> : null;
         
-        return <li className={className}>
+        return <li className={`${className} `}>
                 <NavLink
                     id="cart"
                     to={linkTo}
                     exact 
-                    className="nav-link text-white font-weight-bold icon-block" 
+                    className="nav-link text-white font-weight-bold icon-block nav-item" 
                     activeClassName="active">
                     {navName}  <FaCartArrowDown size={25} />
                     {pillNotification}
@@ -37,20 +37,20 @@ const NavItem = ({navName, linkTo, sign_in}: NavItemProp) => {
     }
     if (navName === 'Admin') {
         
-        return <li className={`${className}`}>
+        return <li className={`${className} admin`}>
                 <NavLink 
                     to={linkTo}
                     exact 
-                    className="nav-link text-white font-weight-bold admin">
+                    className="nav-link text-white font-weight-bold">
                     {navName}
                 </NavLink>
             </li>;
     }
-    return <li className={className}>
+    return <li className={`${className} `}>
                 <NavLink 
                     to={linkTo}
                     exact 
-                    className="nav-link text-white font-weight-bold" 
+                    className="nav-link text-white font-weight-bold nav-item" 
                     activeClassName="active">
                     {navName}
                 </NavLink>

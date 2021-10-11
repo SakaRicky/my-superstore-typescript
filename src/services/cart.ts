@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { CartItemType } from '../../types';
 
-const baseUrl = 'http://localhost:5000/';
+const baseUrl = '/';
 
 let token: string | null = null;
 

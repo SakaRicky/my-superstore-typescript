@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ItemType } from '../../types';
 import constants from '../utils/constants';
 
-const baseUrl = 'http://localhost:5000/';
+const baseUrl = '/';
 
 export const upload = async (formdata: any) => {
     const response = await axios.post(`${baseUrl}item/upload`, formdata);

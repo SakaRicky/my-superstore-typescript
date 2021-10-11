@@ -2,6 +2,14 @@
     position: relative;
 }
 
+.nav-item:hover{
+    background-color: rgb(247, 168, 21);
+}
+
+.nav-li:hover{
+    color: black;
+}
+
 .icon-tag {
     color: white;
     background-color: red;
@@ -23,4 +31,8 @@
     border-radius: 2px;
     /* padding: 1px 15px; */
     /* font-weight: bold; */
+}
+
+.admin:hover {
+    background-color: rgb(19, 8, 80); 
 }
