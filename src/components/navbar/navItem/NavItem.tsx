@@ -15,7 +15,7 @@ const NavItem = ({navName, linkTo, sign_in}: NavItemProp) => {
     const [state] = useStateValue();
     const cartItems = state.cart;
 
-    let className = "nav-item mx-2";
+    let className = "nav-item";
     if (sign_in) {
         className = className + " sign_in";
     }
@@ -28,7 +28,7 @@ const NavItem = ({navName, linkTo, sign_in}: NavItemProp) => {
                     id="cart"
                     to={linkTo}
                     exact 
-                    className="nav-link text-white font-weight-bold icon-block nav-item" 
+                    className="icon-block" 
                     activeClassName="active">
                     {navName}  <FaCartArrowDown size={25} />
                     {pillNotification}
@@ -41,7 +41,7 @@ const NavItem = ({navName, linkTo, sign_in}: NavItemProp) => {
                 <NavLink 
                     to={linkTo}
                     exact 
-                    className="nav-link text-white font-weight-bold">
+                    className="">
                     {navName}
                 </NavLink>
             </li>;
@@ -50,7 +50,7 @@ const NavItem = ({navName, linkTo, sign_in}: NavItemProp) => {
                 <NavLink 
                     to={linkTo}
                     exact 
-                    className="nav-link text-white font-weight-bold nav-item" 
+                    className="" 
                     activeClassName="active">
                     {navName}
                 </NavLink>

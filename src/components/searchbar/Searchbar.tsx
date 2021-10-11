@@ -25,8 +25,8 @@ const Searchbar = ({handleSearch}: SearchProp) => {
         }
     };
 
-    return <div className="row search">
-                <div className="col-sm-3 offset-sm-4 mt-3 mb-2">
+    return <div className="row py-2 d-flex justify-content-center search">
+                <div className="searchArea">
                     <form onSubmit={search} className="input-group md-form form-sm form-2 pl-0">
                             <input 
                                 className="form-control my-0 py-1 amber-border" 

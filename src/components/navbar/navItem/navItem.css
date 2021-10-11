@@ -1,27 +1,42 @@
+
 .icon-block {
     position: relative;
+}
+
+.nav-item {
+    padding: 7px;
+    border-radius: 2px;
+    font-weight: bolder;
+}
+
+.nav-item a {
+    color: wheat;
+    text-decoration: none;
+    
+}
+
+.nav-item a:hover {
+    color: white;
 }
 
 .nav-item:hover{
     background-color: rgb(247, 168, 21);
 }
 
-.nav-li:hover{
-    color: black;
-}
-
+/* Pill notification */
 .icon-tag {
     color: white;
     background-color: red;
     border-radius: 50%;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: -10px;
+    right: -10px;
     width: 15px;
     height: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
 
 .admin {
@@ -35,4 +50,27 @@
 
 .admin:hover {
     background-color: rgb(19, 8, 80); 
+}
+
+@media screen and (max-width: 768px) {
+    .nav-item {
+        padding: 7px 30%;
+        border-radius: 2px;
+        font-weight: bolder;
+    }
+
+    .icon-tag {
+        color: white;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
 }
