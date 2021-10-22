@@ -51,40 +51,40 @@ const Signup = () => {
     };
 
     return (
-        <div>
+        <div className="container signup d-flex justify-content-center align-items-center">
             {notification ? <div className="row">
                                                 <div className={`col-sm-6 offset-sm-3 ${notification.class}`} role="alert">
                                                     <Notification message={notification.message} />
                                                 </div>
                                             </div> : null}
-        <div className="d-flex justify-content-center">
-            <form className="signup" onSubmit={handleSignup}>
-                <div className="d-flex justify-content-center"><h3>Create Account</h3></div>
-                <div className="form-row d-flex my-2">
-                    <div className="form-group col-md-6 mx-2">
-                        <label htmlFor="inputEmail4">Name</label>
-                        <input type="text" className="form-control" id="name" placeholder="Name" onChange={(e) => setName(e.target.value)}/>
+            <div className="">
+                <form onSubmit={handleSignup}>
+                    <div className="d-flex justify-content-center"><h3>Create Account</h3></div>
+                    <div className="row form d-flex my-2">
+                        <div className="form-group mx-2">
+                            <label htmlFor="inputEmail4">Name</label>
+                            <input type="text" className="form-control" id="name" placeholder="Name" onChange={(e) => setName(e.target.value)}/>
+                        </div>
+                        <div className="form-group mx-2">
+                            <label htmlFor="inputPassword4">Username</label>
+                            <input type="password" className="form-control" id="username" placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+                        </div>
                     </div>
-                    <div className="form-group col-md-6 mx-2">
-                        <label htmlFor="inputPassword4">Username</label>
-                        <input type="password" className="form-control" id="username" placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
-                    </div>
-                </div>
 
-                <div className="form-row d-flex my-2">
-                    <div className="form-group col-md-6 mx-2">
-                        <label htmlFor="inputEmail4">Email</label>
-                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+                    <div className="row form d-flex my-2">
+                        <div className="form-group mx-2">
+                            <label htmlFor="inputEmail4">Email</label>
+                            <input type="email" className="form-control" id="inputEmail4" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                        <div className="form-grou mx-2">
+                            <label htmlFor="inputPassword4">Password</label>
+                            <input type="password" className="form-control" id="inputPassword" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
                     </div>
-                    <div className="form-group col-md-6 mx-2">
-                        <label htmlFor="inputPassword4">Password</label>
-                        <input type="password" className="form-control" id="inputPassword" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-                    </div>
-                </div>
- 
-                <div className="d-flex justify-content-center m-2"><button type="submit" className="btn btn-primary">Create Account</button></div>
-            </form>
-        </div>
+    
+                    <div className="d-flex justify-content-center m-2"><button type="submit" className="btn btn-primary">Create Account</button></div>
+                </form>
+            </div>
         </div>
     );
 };
